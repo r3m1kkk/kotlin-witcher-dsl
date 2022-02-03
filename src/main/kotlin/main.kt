@@ -102,7 +102,8 @@ fun main(args: Array<String>) {
             }
         )
     }
-//
+
+//  made with function literals with receiver
 //    val kedven5 = area {
 //        castles = mutableListOf(
 //            castle {
@@ -142,6 +143,7 @@ fun main(args: Array<String>) {
 
     val kedven6 = area {
                     castle {
+                        name = "Kaer Mohren"
                         human {
                             name = "Vesemir"
                             age = 99
@@ -156,6 +158,7 @@ fun main(args: Array<String>) {
                         }
                     }
                     castle {
+                        name = "Geralt's house"
                         human {
                             name = "Geralt"
                             age = 74
@@ -168,6 +171,13 @@ fun main(args: Array<String>) {
                             name = "Ciri"
                             age = 15
                         }
+                        //not allowed in this scope, thanks to DslMarker
+                        /*
+                        castle {
+                            human {
+                                name = "Enemy tries to build a castle inside our castle!"
+                            }
+                        }*/
                     }
                 }
 }

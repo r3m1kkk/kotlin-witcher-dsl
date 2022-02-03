@@ -5,6 +5,7 @@ class Human{
 
 class Castle{
     var habitants:MutableList<Human> = mutableListOf()
+    var name = ""
 }
 
 class Area{

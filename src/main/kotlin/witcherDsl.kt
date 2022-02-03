@@ -1,25 +1,27 @@
+@DslMarker
+annotation class WitcherDsl
 
-fun human(init: Human.() -> Unit): Human{
-    val h = Human()
-    h.init()
-    return h
-}
-
+@WitcherDsl
 class CastleBuilder{
     private val castleHabitants = mutableListOf<Human>()
+    var name = ""
 
 
-    fun house(init: Human.() -> Unit) {
+    fun human(init: Human.() -> Unit) {
         val c = Human()
         c.init()
         castleHabitants.add(c)
     }
 
     fun build():Castle{
-        return Castle().apply { habitants = castleHabitants }
+        val c = Castle()
+        c.habitants = castleHabitants
+        c.name = name
+        return c
     }
 }
 
+@WitcherDsl
 class AreaBuilder{
     private val areaCastles = mutableListOf<Castle>()
 
@@ -35,6 +37,7 @@ class AreaBuilder{
     }
 }
 
+@WitcherDsl
 fun area(init: AreaBuilder.() -> Unit): Area{
     val a = AreaBuilder()
     a.init()
