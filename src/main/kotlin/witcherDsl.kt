@@ -45,7 +45,7 @@ fun area(init: AreaBuilder.() -> Unit): Area{
 }
 
 /*
-
+//function literals with receivers (uncomment this and kedven5)
 fun human(init: Human.() -> Unit): Human{
     val h = Human()
     h.init()
