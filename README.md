@@ -39,4 +39,4 @@ area {
 
 Done using Kotlin's Type-safe builders https://kotlinlang.org/docs/type-safe-builders.html
 
-[witcherDsl.kt - contains builders definition](src/kotlin/witcherDsl.kt)
+[witcherDsl.kt - contains builders definition](src/main/kotlin/witcherDsl.kt)
